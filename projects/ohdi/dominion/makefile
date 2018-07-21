@@ -1,41 +1,10 @@
-
 CFLAGS = -Wall -fpic -coverage -lm -std=c99
 
-#Cite: MakeFile example from CS362 class 
+#Cite: MakeFile example from CS362 class
 
 default: unittestresults.out
 
-rngs.o: rngs.h rngs.c
-	gcc -c rngs.c -g  $(CFLAGS)
-
-dominion.o: dominion.h dominion.c rngs.o
-	gcc -c dominion.c -g  $(CFLAGS)
-
-unittest1: unittest1.c dominion.o rngs.o
-	gcc -o unittest1 -g unittest1.c  dominion.c rngs.o  $(CFLAGS)
-
-unittest2: unittest2.c dominion.o rngs.o
-	gcc -o unittest2 -g unittest2.c  dominion.c rngs.o  $(CFLAGS)
-
-unittest3: unittest3.c dominion.o rngs.o
-	gcc -o unittest3 -g unittest3.c  dominion.c rngs.o  $(CFLAGS)
-
-unittest4: unittest4.c dominion.o rngs.o
-	gcc -o unittest4 -g unittest4.c  dominion.c rngs.o  $(CFLAGS)
-
-cardtest1: cardtest1.c dominion.o rngs.o
-	gcc -o cardtest1 -g cardtest1.c  dominion.c rngs.o  $(CFLAGS)
-
-cardtest2: cardtest2.c dominion.o rngs.o
-	gcc -o cardtest2 -g cardtest2.c  dominion.c rngs.o  $(CFLAGS)
-
-cardtest3: cardtest3.c dominion.o rngs.o
-	gcc -o cardtest3 -g cardtest3.c  dominion.c rngs.o  $(CFLAGS)
-
-cardtest4: cardtest4.c dominion.o rngs.o
-	gcc -o cardtest4 -g cardtest4.c  dominion.c rngs.o  $(CFLAGS)
-
-unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c  cardtest3.c cardtest4.c dominion.c rngs.c
+unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c dominion.c rngs.c
 
 	echo "Result for dominion unit tests:" > unittestresults.out
 	
@@ -58,7 +27,6 @@ unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c
 	gcc -o unittest4 rngs.c dominion.c unittest4.c $(CFLAGS)
 	unittest4 >> unittestresults.out
 	gcov dominion.c >> unittestresults.out
-
 	echo "cardtest1.c:" >> unittestresults.out
 	gcc -o cardtest1 rngs.c dominion.c cardtest1.c $(CFLAGS)
 	cardtest1 >> unittestresults.out
@@ -79,10 +47,10 @@ unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c
 	cardtest4 >> unittestresults.out
 	gcov dominion.c >> unittestresults.out
 	
-
+	cat dominion.c.gcov >> unittestresults.out 
 
 clean:
-	rm unittestresults.out
+	rm unittestresults.out 
 
-cleanall: 
-	rm unittestresults.out  unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 *.gcda *.gcno *.gcov
+cleanall:
+	rm unittestresults.out unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 *.gcda *.gcno *.gcov
