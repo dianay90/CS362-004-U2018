@@ -30,7 +30,7 @@ void assert(int value)
 int main()
 {
 
-int gameStatus; 
+//int gameStatus; 
 
 int bonus =0; 
 /* GameState unit test */ 
@@ -54,14 +54,15 @@ Game1.hand[0][1] = copper;
 Game1.hand[0][2] = province; 
 Game1.hand[0][3] = copper; 
 //Game1.deck[0][4] = smithy; 
-int purse=0; 
+//int purse=0; 
 
 int prevCoins;
 
 prevCoins = Game1.coins; 
 int prevHandCount = Game1.handCount[0];
 
-int count = Game1.deckCount[0];
+//	
+//int count = Game1.deckCount[0];
 
 
 
@@ -218,9 +219,9 @@ Game2.hand[0][1] = silver;
 Game2.hand[0][2] = province;
 Game2.hand[0][3] = silver;
 //Game2.deck[0][4] = smithy; 
- purse = 0;
+// purse = 0;
 
-count = Game2.deckCount[0];
+//int count = Game2.deckCount[0];
 
 int prevGame2Coins = Game2.coins; 
 

@@ -28,9 +28,9 @@ int main()
 {
 	//printf(" Each other player discards the top card of their deck, then gains a curse into their deck."\n);
 printf("SEAHAG CARD BEING TESTED \n\n");
-	int gameStatus;
+//	int gameStatus;
 	int prevPlayer1DeckCount, prevPlayer2DeckCount, prevPlayer3DeckCount;
-	int prevPlayer1DiscardCount, prevPlayer2DiscardCount, prevPlayer3DiscardCount;
+//	int  prevPlayer1DiscardCount;
 	int bonus = 0;
 	/* GameState unit test */
 	int i;
@@ -50,7 +50,7 @@ printf("SEAHAG CARD BEING TESTED \n\n");
 	Game1.discardCount[0] = 4;
 
 	prevPlayer1DeckCount = Game1.deckCount[0];
-	prevPlayer1DiscardCount = Game1.discardCount[0];
+//	prevPlayer1DiscardCount = Game1.discardCount[0];
 
 
 	/* Discard an estate for +4 */
@@ -69,7 +69,7 @@ printf("SEAHAG CARD BEING TESTED \n\n");
 	Game1.discardCount[1] = 4;
 
 	prevPlayer2DeckCount = Game1.deckCount[1];
-	prevPlayer2DiscardCount = Game1.discardCount[1];
+//	prevPlayer2DiscardCount = Game1.discardCount[1];
 		/* Discard an estate for +4 */
 		Game1.deck[1][0] = smithy;
 	Game1.deck[1][1] = copper;
@@ -85,7 +85,7 @@ printf("SEAHAG CARD BEING TESTED \n\n");
 	Game1.discardCount[2] = 4;
 
 	prevPlayer3DeckCount = Game1.deckCount[2];
-	prevPlayer3DiscardCount = Game1.discardCount[2];
+	//prevPlayer3DiscardCount = Game1.discardCount[2];
 
 	Game1.deck[2][0] = village;
 	Game1.deck[2][1] = remodel;

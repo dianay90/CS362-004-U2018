@@ -28,7 +28,7 @@ int main()
 {
 
 printf("SMITHY TEST\n\n");
-int gameStatus; 
+//int gameStatus; 
 /* GameState unit test */ 
 
 struct gameState  Game1; 
@@ -65,7 +65,7 @@ Game1.hand[0][3] = silver;
 Game1.hand[0][4] = remodel;
 
 int hand = Game1.handCount[0];
-int deck = Game1.deckCount[0];
+//int deck = Game1.deckCount[0];
 int i; 
 for (i = 0; i < Game1.handCount[0]; i++)
 {
@@ -104,7 +104,7 @@ printf("Number of great hall cards: %d \n", Game1.supplyCount[great_hall]);
 //smithyCardEffect( &Game1,2, 0);  
 //		smithyCardEffect(state, handPos, currentPlayer);
 cardEffect(smithy, 0, 0, 0, &Game1, 2, 0);
-{
+
 
 printf("After Smithy card added and implemented \n"); 
 for (i = 0; i < Game1.handCount[0]; i++)
@@ -152,10 +152,9 @@ else
 }
 
 
-
-int prevEstateSupplyCount = Game1.supplyCount[estate];
-int prevDuchySupplyCount = Game1.supplyCount[duchy];
-int prevPrivinceSupplyCount = Game1.supplyCount[province];
+ prevEstateSupplyCount = Game1.supplyCount[estate];
+prevDuchySupplyCount = Game1.supplyCount[duchy];
+prevPrivinceSupplyCount = Game1.supplyCount[province];
 
 if (prevDuchySupplyCount != Game1.supplyCount[duchy] || prevDuchySupplyCount != Game1.supplyCount[estate] || prevEstateSupplyCount != Game1.supplyCount[province] || prevPrivinceSupplyCount)
 {
@@ -224,7 +223,7 @@ else
 
 return 0; 
 
-}
+
 }
 
 

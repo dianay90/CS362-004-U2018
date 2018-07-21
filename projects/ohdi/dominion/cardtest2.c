@@ -27,11 +27,11 @@ int main()
 {
 
 
-int bonus=0; 
+//int bonus=0; 
 printf("ADVENTURER TEST\n\n");
 
 
-int gameStatus; 
+//int gameStatus; 
 /* GameState unit test */ 
 
 struct gameState  Game1; 

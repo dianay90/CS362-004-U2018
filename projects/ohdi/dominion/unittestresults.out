@@ -1,0 +1,386 @@
+Result for dominion unit tests:
+unittest1.c:
+Is Game Over Test 
+Initialized game. Testing to see if the gameStatus is 0 as the game just started. 
+Is game over? 1: Yes 0:No  Status:0 
+TEST SUCCESSFUL!
+
+Current province count: 8
+Province supply not set to 0 
+Is game over? 1: Yes 0:No  Status:1 
+TEST SUCCESSFUL!
+
+Setting the curse pile, estate pile, and duchy pile to 0 
+Is game over? 1: Yes 0:No  Status:1 
+TEST SUCCESSFUL!
+
+File 'dominion.c'
+Lines executed:17.38% of 558
+Creating 'dominion.c.gcov'
+
+unittest2.c:
+Initialized game. Testing shuffle card function. 
+Contents of deck:
+1 
+4 
+1 
+4 
+4 
+4 
+4 
+4 
+1 
+4 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+Player 1 has 20 cards. Calling shuffling function.
+
+Shuffling deck
+Contents of deck:
+0 
+0 
+1 
+0 
+1 
+4 
+4 
+0 
+1 
+0 
+4 
+0 
+4 
+4 
+4 
+4 
+0 
+0 
+0 
+0 
+TEST SUCCESSFULLY PASSED. SHUFFLING COMPLETE.
+File 'dominion.c'
+Lines executed:16.13% of 558
+Creating 'dominion.c.gcov'
+
+unittest3.c:
+UPDATE COINS TEST  
+Starting with 0 coins for player 0. Adding 5 bonus cards only. 
+Current number of coins = 0 
+Updating coins 
+Actual number of coins = 5, expected = 5
+
+TEST SUCCESS: Game coins matched expected amount 
+
+Testing hand with silvers only 
+Actual number of coins = 10, expected = 10
+
+
+TEST SUCCESS: Game coins matched expected amount 
+
+Testing hand with gold only 
+Actual number of coins = 15, expected = 15
+
+
+TEST SUCCESS: Game coins matched expected amount 
+
+Testing hand with coppers only 
+Actual number of coins = 5, expected = 5
+
+
+TEST SUCCESS: Game coins matched expected amount 
+
+Testing mixed hand: 1 copper, 2 gold, 2 silvers + 2 bonus 
+Actual number of coins = 13, expected = 13
+
+
+TEST SUCCESS: Game coins matched expected amount 
+
+TEST SUCCESS: Test had no errors 
+File 'dominion.c'
+Lines executed:16.31% of 558
+Creating 'dominion.c.gcov'
+
+unittest4.c:
+FULL DECK COUNT UNIT TEST: Testing full deck count function to see how many smithys' there are 
+
+Player 1 Hand: 13
+Player 1 Hand: 13
+Player 1 Hand: 13
+Player 1 Hand: 13
+Player 1 Hand: 7
+
+Actual result: 4, Expected result: 4 
+
+TEST SUCCESS: Right number of cards found 
+TEST SUCCESSFUL. NO ERRORS FOUND.
+File 'dominion.c'
+Lines executed:1.25% of 558
+Creating 'dominion.c.gcov'
+
+cardtest1.c:
+SMITHY TEST
+
+Number of cards in player 1 hand: 5, cards in player 1 deck: 5, cards in player 1 discard pile 0 
+Smithy card added 
+Player 1 Hand: 1
+Player 1 Hand: 4
+Player 1 Hand: 13
+Player 1 Hand: 5
+Player 1 Hand: 12
+Number of cards in player 2 hand: 3, cards in player 2 deck: 10, cards in player 2 discard pile 0 
+
+
+Number of estate cards: 8 
+Number of duchy cards: 8 
+Number of province cards: 8 
+Kingdom Cards 
+Number of baron cards: 10 
+Number of feast cards: 10 
+Number of garden cards: 8 
+Number of remodel cards: 10 
+Number of council room cards: 10 
+Number of mine cards: 10 
+Number of village cards: 10 
+Number of smithy cards: 10 
+Number of adventurer cards: 10 
+Number of great hall cards: 8 
+After Smithy card added and implemented 
+Player 1 Hand: 1
+Player 1 Hand: 4
+Player 1 Hand: 1
+Player 1 Hand: 5
+Player 1 Hand: 12
+Player 1 Hand: 4
+Player 1 Hand: 4
+Player 1 Hand: 1
+
+FAILED TEST:Hand count did not succesfully increment by 3 with proper values 
+TEST SUCCESS: Player 2 hand count not changed after smithy used. 
+FAILED TEST:Supply counts differnet after function call 
+
+Number of cards in player 1 hand: 8, cards in player 1 deck: 0, cards in player 1 discard pile 1 
+Number of cards in player 2 hand: 3, cards in player 2 deck: 10, cards in player 2 discard pile 0 
+
+
+Number of estate cards: 6 
+Number of duchy cards: 8 
+Number of province cards: 8 
+Kingdom Cards 
+Number of baron cards: 10 
+Number of feast cards: 10 
+Number of garden cards: 8 
+Number of remodel cards: 10 
+Number of council room cards: 10 
+Number of mine cards: 10 
+Number of village cards: 10 
+Number of smithy cards: 10 
+Number of adventurer cards: 10 
+Number of great hall cards: 8 
+
+TEST FAILURE. TEST CONTAINED  ONE OR MORE ERRORS.
+File 'dominion.c'
+Lines executed:24.55% of 558
+Creating 'dominion.c.gcov'
+
+cardtest2.c:
+ADVENTURER TEST
+
+Current player: 0 
+Player one deck contains TWO treasure cards, one copper(4) and one silver(5).
+
+Player 1 Deck: 1
+Player 1 Deck: 4
+Player 1 Deck: 13
+Player 1 Deck: 5
+Player 1 Deck: 12
+
+Player 1 Discard: 13
+Player 1 Discard: 4
+
+Player 1 Hand: 13
+Player 1 Hand: 4
+Player 1 Hand: 13
+Player 1 Hand: 4
+
+Number of cards in player 1 hand: 4, cards in player 1 deck: 5, cards in player 1 discard pile 2 
+Number of cards in player 2 hand: 0, cards in player 2 deck: 10, cards in player 2 discard pile 0 
+
+Adventure function called
+
+Player 1 Deck: 12
+Player 1 Deck: 4
+
+
+Player 1 Hand: 13
+Player 1 Hand: 4
+Player 1 Hand: 13
+Player 1 Hand: 4
+Player 1 Hand: 5
+Player 1 Hand: 13
+Player 1 Hand: 4
+Player 1 Hand: 1
+
+Number of cards in player 1 hand: 8, cards in player 1 deck: 2, cards in player 1 discard pile 0 
+Number of cards in player 2 hand: 1, cards in player 2 deck: 9, cards in player 2 discard pile 0 
+
+FAILED TEST:Discard pile does not have the right number of rejected cards
+Hand  does not have the right number of treasure cards
+Deck does not have the right number of cards subtracted
+
+TEST FAILURE. TEST CONTAINED  ONE OR MORE ERRORS.
+File 'dominion.c'
+Lines executed:26.16% of 558
+Creating 'dominion.c.gcov'
+
+cardtest3.c:
+FIRST TEST: DISCARD AN ESTATE FOR FOUR COINS 
+
+Player one deck contains one estate, two silvers, and one province card
+Number of cards in player 1 hand: 5, cards in player 1 deck: 0, cards in player 1 discard pile 0 
+Number of cards in player 2 hand: 0, cards in player 2 deck: 10, cards in player 2 discard pile 0 
+
+Player 1 Hand: 1
+Player 1 Hand: 4
+Player 1 Hand: 3
+Player 1 Hand: 4
+Player 1 Hand: 4
+ Number of coins: 4 
+FUNCTION CALLED.  
+Contents of new hand - should be one less 
+
+Player 1 Hand: 4
+Player 1 Hand: 3
+Player 1 Hand: 4
+Player 1 Hand: 4
+
+Number of cards in player 1 hand: 4, cards in player 1 deck: 0, cards in player 1 discard pile 1 
+Number of cards in player 2 hand: 0, cards in player 2 deck: 10, cards in player 2 discard pile 0 
+
+Number of coins: 8 
+TEST SUCCESS: +4 coins added  
+TEST SUCCESS: NEW HAND COUNT IS ONE LESS 
+ 
+
+SECOND  TEST: GAIN AN ESTATE 
+
+Now testing when player wants to gain an estate card instead
+
+Player 1 Hand: 5
+Player 1 Hand: 5
+Player 1 Hand: 3
+Player 1 Hand: 5
+
+Player one deck contains one estate, two silvers, and one province card
+Number of cards in player 1 hand: 4, cards in player 1 deck: 0, cards in player 1 discard pile 0 
+Number of cards in player 2 hand: 0, cards in player 2 deck: 10, cards in player 2 discard pile 0 
+
+Contents of player 1 hand 
+Player 1 Hand: 5
+Player 1 Hand: 5
+Player 1 Hand: 3
+Player 1 Hand: 5
+
+Player 1 Discard: 1
+TEST SUCCESS: COINS UNAFFECTED
+TEST SUCCESSFUL ONE MORE ESTATE VALUE ADDED IN DISCARD PILE. ESTATE CARD ENUM IS 1
+
+Number of cards in player 1 hand: 4, cards in player 1 deck: 0, cards in player 1 discard pile 1 
+Number of cards in player 2 hand: 0, cards in player 2 deck: 10, cards in player 2 discard pile 0 
+
+TEST SUCCESSFUL. NO ERRORS FOUND.
+File 'dominion.c'
+Lines executed:22.58% of 558
+Creating 'dominion.c.gcov'
+
+cardtest4.c:
+SEAHAG CARD BEING TESTED 
+
+Current player is 0 
+Player 1 Deck: 1
+Player 1 Deck: 4
+Player 1 Deck: 3
+Player 1 Deck: 4
+ 
+Player 1 Discard: 13
+Player 1 Discard: 4
+Player 1 Discard: 7
+Player 1 Discard: 4
+
+ 
+Player 2 Deck: 13
+Player 2 Deck: 4
+Player 2 Deck: 21
+Player 2 Deck: 4
+ 
+Player 2 Discard: 13
+Player 2 Discard: 4
+Player 2 Discard: 7
+Player 2 Discard: 4
+
+ 
+Player 3 Deck: 14
+ 
+Player 3 Discard: 13
+Player 3 Discard: 4
+Player 3 Discard: 7
+Player 3 Discard: 4
+
+ 
+Number of cards in player 1 hand: 5, cards in player 1 deck: 4, cards in player 1 discard pile 4 
+Number of cards in player 2 hand: 0, cards in player 2 deck: 1, cards in player 2 discard pile 5 
+
+Number of cards in player 3 hand: 0, cards in player 3 deck: 1, cards in player 3 discard pile 5 
+
+After calling sea hag function. Affected players get top part of their deck replaced by curse card. 
+
+
+FAILED TEST:Other players deck size  should be same as before sea hag was played. 
+
+FAILED TEST:Other players deck size should be same as before sea hag was played. 
+Player 1 Deck: 1
+Player 1 Deck: 4
+Player 1 Deck: 3
+Player 1 Deck: 4
+ 
+Player 1 Discard: 13
+Player 1 Discard: 4
+Player 1 Discard: 7
+Player 1 Discard: 4
+
+ 
+Player 2 Deck: 13
+ 
+Player 2 Discard: 13
+Player 2 Discard: 4
+Player 2 Discard: 7
+Player 2 Discard: 4
+Player 2 Discard: 4
+
+ 
+Player 3 Deck: 14
+ 
+Player 3 Discard: 13
+Player 3 Discard: 4
+Player 3 Discard: 7
+Player 3 Discard: 4
+Player 3 Discard: 4
+
+ 
+Number of cards in player 1 hand: 5, cards in player 1 deck: 4, cards in player 1 discard pile 4 
+Number of cards in player 2 hand: 0, cards in player 2 deck: 1, cards in player 2 discard pile 5 
+
+Number of cards in player 3 hand: 0, cards in player 3 deck: 1, cards in player 3 discard pile 5 
+
+TEST FAILURE. TEST CONTAINED  ONE OR MORE ERRORS.
+File 'dominion.c'
+Lines executed:18.64% of 558
+Creating 'dominion.c.gcov'
+
