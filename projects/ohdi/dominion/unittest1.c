@@ -54,7 +54,7 @@ assert(1);
 
 printf("Current province count: %d\n", Game1.supplyCount[province]);
 
-printf("Province supply not set to 0 \n"); 
+printf("Province supply now set to 0 \n"); 
 Game1.supplyCount[province]=0; 
 
 gameStatus = isGameOver(&Game1); 
