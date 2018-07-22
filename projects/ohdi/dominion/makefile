@@ -60,13 +60,13 @@ unittest4: unittest4.c dominion.o interface.o rngs.o
 	gcc -o unittest4 unittest4.c -g dominion.o interface.o rngs.o $(CFLAGS)
 
 #unittestresults: unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c dominion.c interface.o rngs.o
-unittestresults: unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
+unittestresults: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
 	echo "Result for dominion unit tests:" > unittestresults.out
 	
 	echo "unittest1.c:" >> unittestresults.out
 	##gcc -o unittest1 rngs.c dominion.c unittest1.c $(CFLAGS)
 	unittest1 >> unittestresults.out
-	##gcov dominion.c -b >> unittestresults.out
+	#gcov dominion.c -b >> unittestresults.out
 	#cat dominion.c.#gcov >> unittestresults.out 
 	
 	echo "unittest2.c:" >> unittestresults.out
