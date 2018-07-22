@@ -1,1 +1,1 @@
-Just run make and testme.c should bein the same directory as the make file
+Just run make and testme.c should be in the same directory as the make file
