@@ -200,6 +200,7 @@ else
 
 if (Game1.handCount[0] != prevHandCount + treasure)
 {
+	assert(6);
 	printf("Hand  does not have the right number of treasure cards\n");
 }
 
@@ -213,7 +214,8 @@ else
 
 if (Game1.deckCount[0] != prevDeckCount - deckMinus)
 {
-	printf("Deck does not have the right number of cards subtracted\n");
+	assert(6); 
+	printf("Deck does not have the right number of cards subtracted. \n");
 }
 
 else

@@ -203,7 +203,7 @@ printf("SEAHAG CARD BEING TESTED \n\n");
 		{
 			assert(6);
 
-				printf("Other players deck size should be same as before sea hag was played. \n");
+				printf("Other players deck size should gain a curse card. \n");
 
 		}
 
