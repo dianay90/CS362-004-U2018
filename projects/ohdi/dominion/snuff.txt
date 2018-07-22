@@ -26,8 +26,8 @@ interface.o: interface.h interface.c
 
 runtests: testDrawCard 
 	./testDrawCard &> unittestresult.out
-	#gcov dominion.c >> unittestresult.out
-	#cat dominion.c.gcov >> unittestresult.out
+	gcov dominion.c >> unittestresult.out
+	cat dominion.c.gcov >> unittestresult.out
 unittest1: unittest1.c dominion.o rngs.o
 	gcc -o unittest1 -g unittest1.c dominion.c rngs.o $(CFLAGS)
   
