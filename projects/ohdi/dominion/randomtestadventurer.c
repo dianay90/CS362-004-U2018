@@ -6,7 +6,7 @@
 #include <time.h>
 
 /* Testing Adventurer */
-int NUMTRIES = 4;
+int NUMTRIES = 2;
 int fail = 0, i =0; 
 int prevHandCount, prevDeckCount, prevDiscardCount;
 
@@ -127,38 +127,26 @@ void chosenPlayerRandomize(int chosenPlayer, struct gameState *state)
 
 }
 
-void printGameStatus(struct gameState *state, int chosenPlayer)
-{
+void printGameStatus(struct gameState *state, int chosenPlayer) {
+
+	printf("game status printing %d \n", chosenPlayer);
 	for (i = 0; i < state->deckCount[chosenPlayer]; i++)
 	{
 
-		printf("Player Deck: %d\n", state->deck[chosenPlayer][i]);
 
+		printf("Player %d Deck: %d\n", chosenPlayer, state->deck[chosenPlayer][i]);
 	}
-
 	printf("\n");
-
 	for (i = 0; i < state->discardCount[chosenPlayer]; i++)
 	{
-
-		printf("Player Discard: %d\n", state->discard[chosenPlayer][i]);
-
+		printf("Player %d Discard: %d\n", chosenPlayer, state->discard[chosenPlayer][i]);
 	}
-
 	printf("\n");
-
-
 	for (i = 0; i < state->handCount[chosenPlayer]; i++)
 	{
-
-		printf("Player  Hand: %d\n", state->hand[chosenPlayer][i]);
-
+		printf("Player %d Hand: %d\n", chosenPlayer, state->hand[chosenPlayer][i]);
 	}
-
 	printf("\n");
-
-
-
 }
 
 
@@ -177,17 +165,18 @@ int main()
 	int kingdomCards[10] = { baron,  feast, gardens, remodel, council_room, mine, village, smithy, adventurer, great_hall };
 
 	/*Randomly choose 2 to 4 players */
-
+	int randSeed; 
 	while (NUMTRIES > 0)
 
 	{
 		int playerNumber = rand() % 3 + 2;
-
-		initializeGame(playerNumber, kingdomCards, 5, &Game1);
+		randSeed= rand(); 
+		initializeGame(playerNumber, kingdomCards, randSeed, &Game1);
 		printf("Current player: %d \n", whoseTurn(&Game1));
 
 		/* Choose random player from total number of players */
 		int chosenPlayer = rand() % playerNumber;
+		printf("Chosen Player playing Adventurer Card: %d \n", chosenPlayer);
 
 		chosenPlayerRandomize(chosenPlayer, &Game1);
 
@@ -234,6 +223,7 @@ int main()
 
 		playerLineStatus(playerNumber, &Game1);
 
+		printf("Chosen Player playing Adventurer Card: %d \n", chosenPlayer);
 
 		if (Game1.discardCount[chosenPlayer] != prevDiscardCount + reject)
 		{
@@ -258,6 +248,7 @@ int main()
 			printf("Deck does not have the right number of cards subtracted. \n");
 			fail = 1;
 		}
+		printf("Chosen Player playing Adventurer Card: %d \n", chosenPlayer);
 
 		printf("\n");
 

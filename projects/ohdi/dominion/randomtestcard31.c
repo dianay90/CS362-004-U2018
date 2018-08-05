@@ -5,7 +5,7 @@
 #include "rngs.h"
 
 /* Testing Smithy */
-int NUMTRIES = 2;
+int NUMTRIES = 1;
 int prevHandCount, prevDeckCount, prevDiscardCount;
 int i;
 int fail = 0; int original[5]; int returnRandom(int lower, int upper) {
@@ -63,12 +63,8 @@ void assert(int value)
 
 
 void printGameStatus(struct gameState *state, int chosenPlayer) {
-
-printf("game status printing %d \n", chosenPlayer);
 	for (i = 0; i < state->deckCount[chosenPlayer]; i++)
 	{
-
-	
 		printf("Player %d Deck: %d\n", chosenPlayer, state->deck[chosenPlayer][i]);
 	}
 	printf("\n");
@@ -84,14 +80,12 @@ printf("game status printing %d \n", chosenPlayer);
 	printf("\n");
 }
 
-
-
 void chosenPlayerRandomize(int chosenPlayer, struct gameState *state) {
 	int i;
 	//	int handCount = rand() % MAX_HAND;
 	int handCount = returnRandom(5, 10);
 	state->handCount[chosenPlayer] = handCount;
-	//printf("printing hand count %d \n",state->handCount[chosenPlayer]); 
+
 	int maxCoins = returnRandom(2, 5);
 
 	//	int maxDeckCount = rand() % MAX_DECK;
@@ -131,19 +125,9 @@ void chosenPlayerRandomize(int chosenPlayer, struct gameState *state) {
 		treasure_map };
 	/*Set hand */
 	for (i = 0; i < totalHandCount - maxCoins; i++)
-{
-
-
-
+	{
 		state->hand[chosenPlayer][i] = otherCards[rand() % 24];
-		
-printf("hand of chosen player %d, %d \n", chosenPlayer, state->hand[chosenPlayer][i]);	
-
-}
-
-state->hand[chosenPlayer][1]= smithy; 
-state->hand[chosenPlayer][2]= smithy;
-
+	}
 	int trackI = i + 1;
 	for (i = 0; i < maxCoins; i++)
 	{
@@ -179,7 +163,7 @@ int main()
 	/* GameState unit test */
 
 
-int randSeed; 
+
 
 
 	while (NUMTRIES > 0)
@@ -190,24 +174,20 @@ int randSeed;
 
 		int kingdomCards[10] = { baron,  feast, gardens, remodel, council_room, mine, village, smithy, adventurer, great_hall };
 
-		randSeed  = rand(); 
 		/* 2-4 players*/
 		int playerNumber = rand() % 3 + 2;
 
 		printf("Number of players: %d \n", playerNumber);
-		initializeGame(playerNumber, kingdomCards, randSeed, &Game1);
+		initializeGame(playerNumber, kingdomCards, 5, &Game1);
 
 		/* Choose random player from total number of players */
 		//int chosenPlayer = rand() % playerNumber;
 		int chosenPlayer = whoseTurn(&Game1);
 
-	
-		printf("Chosen Player playing Smithy Card: %d \n", chosenPlayer);
-
+		printf("Chosen Player: %d \n", chosenPlayer);
 		for (i = 0; i < playerNumber; i++)
 		{
 			chosenPlayerRandomize(i, &Game1);
-			printf("in chosen players randomize loop \n"); 
 		}
 		int hand = Game1.handCount[chosenPlayer];
 		/*keep track of supply count*/
@@ -221,35 +201,20 @@ int randSeed;
 		printf("\n");
 
 		/* print game status of random players */
-		printf("Chosen Player playing Smithy Card: %d \n", chosenPlayer);
-
-
-printf("player number right before game stauts %d\n", playerNumber);
-	int k; 	
-	for (k = 0; k < playerNumber; k++)
+		for (i = 0; i < playerNumber; i++)
 		{
-		//	printf ("in here");
-			printGameStatus(&Game1, k);
+			printGameStatus(&Game1, i);
 		}
 
-
-
-//printGameStatus( &Game1, 1);
 		supplyAndCards(&Game1);
 
 		cardEffect(smithy, 0, 0, 0, &Game1, 2, 0);
 
 		printf("After Smithy card called \n");
-
-
- 	
-	for (k = 0; k < playerNumber; k++)
+		for (i = 0; i < playerNumber; i++)
 		{
-			printf ("in here");
-			printGameStatus(&Game1, k);
+			printGameStatus(&Game1, i);
 		}
-
-
 
 		supplyAndCards(&Game1);
 
@@ -277,7 +242,6 @@ printf("player number right before game stauts %d\n", playerNumber);
 		}
 
 
-		printf("Chosen Player playing Smithy Card: %d \n", chosenPlayer);
 
 		if (prevDuchySupplyCount != Game1.supplyCount[duchy] || prevDuchySupplyCount != Game1.supplyCount[estate] || prevEstateSupplyCount != Game1.supplyCount[province] || prevPrivinceSupplyCount)
 		{

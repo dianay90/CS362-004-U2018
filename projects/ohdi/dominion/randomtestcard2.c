@@ -6,7 +6,7 @@
 #include "rngs.h"
 
 /* Testing SeaHag*/
-int NUMTRIES = 1;
+int NUMTRIES = 2;
 int fail = 0;
 
 int prevHandCount0, prevDeckCount0, prevDiscardCount0, prevHandCount1, prevDeckCount1, prevDiscardCount1,
@@ -165,11 +165,13 @@ int main()
 {
 	//printf(" Each other player discards the top card of their deck, then gains a curse into their deck."\n);
 	printf("SEAHAG CARD BEING TESTED \n\n");
-
+int randSeed; 
 
 	while (NUMTRIES > 0)
 
 	{
+
+	randSeed =rand(); 
 		//	int gameStatus;
 		//	int  prevPlayer1DiscardCount;
 		int bonus = 0;
@@ -179,7 +181,7 @@ int main()
 
 		int kingdomCards[10] = { baron,  feast, gardens, remodel, council_room, mine, village, smithy, adventurer, great_hall };
 
-		initializeGame(3, kingdomCards, 5, &Game1);
+		initializeGame(3, kingdomCards, randSeed, &Game1);
 
 		int playerNumber = rand() % 3 + 2;
 		if (playerNumber == 4)
@@ -191,7 +193,7 @@ int main()
 		/* Choose random player from total number of players */
 		//int chosenPlayer = rand() % playerNumber;
 		int chosenPlayer = whoseTurn(&Game1);
-		printf("Chosen Player: %d \n", chosenPlayer);
+		printf("Chosen Player playing SeaHag Card: %d \n", chosenPlayer);
 		
 		for (i = 0; i < playerNumber; i++)
 		{
@@ -227,7 +229,8 @@ int main()
 		}
 
 
-	
+		printf("Chosen Player playing SeaHag Card: %d \n", chosenPlayer);
+
 		int k;
 		for (k = 0; k < playerNumber; k++)
 		{
@@ -346,6 +349,7 @@ int main()
 		}
 
 		
+		printf("Chosen Player playing SeaHag Card: %d \n", chosenPlayer);
 
 
 		/* Curse card? 2 player situation 0,1 and 3 players situation  0,1, 2*/
