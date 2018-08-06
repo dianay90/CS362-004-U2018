@@ -6,7 +6,7 @@
 #include <time.h>
 
 /* Testing Adventurer */
-int NUMTRIES = 2;
+int NUMTRIES = 1;
 int fail = 0, i =0; 
 int prevHandCount, prevDeckCount, prevDiscardCount;
 
@@ -107,9 +107,12 @@ void chosenPlayerRandomize(int chosenPlayer, struct gameState *state)
 	{
 		state->hand[chosenPlayer][trackI++] = coins[rand() % 3];
 	}
+
+	state->hand[chosenPlayer][0]= adventurer; 
+
 	/*Set discard*/
 	for (i = 0; i < maxDiscardCount; i++)
-	{
+ 	{
 		state->discard[chosenPlayer][i] = otherCards[rand() % 24];
 	}
 
@@ -129,7 +132,7 @@ void chosenPlayerRandomize(int chosenPlayer, struct gameState *state)
 
 void printGameStatus(struct gameState *state, int chosenPlayer) {
 
-	printf("game status printing %d \n", chosenPlayer);
+//	printf("game status printing %d \n", chosenPlayer);
 	for (i = 0; i < state->deckCount[chosenPlayer]; i++)
 	{
 
@@ -171,10 +174,11 @@ int main()
 		int playerNumber = rand() % 3 + 2;
 		randSeed= rand(); 
 		initializeGame(playerNumber, kingdomCards, randSeed, &Game1);
-		printf("Current player: %d \n", whoseTurn(&Game1));
+	//	printf("Current player: %d \n", whoseTurn(&Game1));
 
 		/* Choose random player from total number of players */
-		int chosenPlayer = rand() % playerNumber;
+		int chosenPlayer = whoseTurn(&Game1); 
+		
 		printf("Chosen Player playing Adventurer Card: %d \n", chosenPlayer);
 
 		chosenPlayerRandomize(chosenPlayer, &Game1);
@@ -209,7 +213,7 @@ int main()
 
 		deckMinus = treasure + reject;
 
-		printGameStatus(&Game1, chosenPlayer);
+//		printGameStatus(&Game1, chosenPlayer);
 
 		printf("Adventure function called\n");
 

@@ -64,7 +64,7 @@ void assert(int value)
 
 void printGameStatus(struct gameState *state, int chosenPlayer) {
 
-printf("game status printing %d \n", chosenPlayer);
+//printf("game status printing %d \n", chosenPlayer);
 	for (i = 0; i < state->deckCount[chosenPlayer]; i++)
 	{
 
@@ -207,7 +207,7 @@ int randSeed;
 		for (i = 0; i < playerNumber; i++)
 		{
 			chosenPlayerRandomize(i, &Game1);
-			printf("in chosen players randomize loop \n"); 
+//			printf("in chosen players randomize loop \n"); 
 		}
 		int hand = Game1.handCount[chosenPlayer];
 		/*keep track of supply count*/
@@ -224,7 +224,7 @@ int randSeed;
 		printf("Chosen Player playing Smithy Card: %d \n", chosenPlayer);
 
 
-printf("player number right before game stauts %d\n", playerNumber);
+//printf("player number right before game stauts %d\n", playerNumber);
 	int k; 	
 	for (k = 0; k < playerNumber; k++)
 		{
@@ -254,7 +254,7 @@ playerLineStatus(playerNumber, &Game1);
 
 	for (k = 0; k < playerNumber; k++)
 		{
-			printf ("in here");
+	//		printf ("in here");
 			printGameStatus(&Game1, k);
 		}
 

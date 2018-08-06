@@ -88,9 +88,9 @@ randomtest: dominion.o interface.o
 	gcc -o randomtestcard1 -g randomtestcard1.c dominion.o rngs.o interface.o $(CFLAGS)
 	gcc -o randomtestcard2 -g randomtestcard2.c dominion.o rngs.o interface.o $(CFLAGS)
 
-	./randomtestadventurer >> randomtestresults.out
 	./randomtestcard1 >> randomtestresults.out
 	./randomtestcard2 >> randomtestresults.out
+	./randomtestadventurer >> randomtestresults.out
 		
 	gcov -f -b dominion.c >> randomtestresults.out
 	

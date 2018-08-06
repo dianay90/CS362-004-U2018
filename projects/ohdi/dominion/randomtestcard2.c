@@ -229,7 +229,7 @@ int randSeed;
 		}
 
 
-		printf("Chosen Player playing SeaHag Card: %d \n", chosenPlayer);
+//		printf("Chosen Player playing SeaHag Card: %d \n", chosenPlayer);
 
 		int k;
 		for (k = 0; k < playerNumber; k++)
