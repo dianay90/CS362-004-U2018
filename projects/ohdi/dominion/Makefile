@@ -80,6 +80,8 @@ unittest4: unittest4.c dominion.o interface.o rngs.o
 #	gcov dominion.c -b >> randomtestresults.out
 #	cat dominion.c.gcov >> randomtestresults.out
 
+
+#Cite: Student in CS362 class helped me with the randomtest part of makefile
 randomtest: dominion.o interface.o
 
 	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o interface.o $(CFLAGS)
