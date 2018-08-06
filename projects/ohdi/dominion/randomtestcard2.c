@@ -18,12 +18,12 @@ upper) {
 	return num;
 }
 void playerLineStatus(int playerNumber, struct gameState *state) {
-	int i = 0; int player = 0;
+	int i = 0;// int player = 0;
 	for (i = 0; i < playerNumber; i++)
 	{
-		player = i + 1;
+		//player = i + 1;
 
-		printf("Number of cards in player %d hand: %d, deck: %d, discard pile %d \n\n", player, state->handCount[i], state->deckCount[i], state->discardCount[i]);
+		printf("Number of cards in player %d hand: %d, deck: %d, discard pile %d \n\n",i, state->handCount[i], state->deckCount[i], state->discardCount[i]);
 	}
 }
 
@@ -239,11 +239,10 @@ int randSeed;
 		}
 
 
-		for (k = 0; k < playerNumber; k++)
-		{
-			playerLineStatus(k, &Game1);
+		
+			playerLineStatus(playerNumber, &Game1);
 
-		}
+		
 		cardEffect(25, 0, 0, 0, &Game1, 0, &bonus);
 
 		printf("SEAHAG CALLED. After calling sea hag function. Affected players get top part of their deck replaced by curse card. \n");
@@ -256,11 +255,8 @@ int randSeed;
 		}
 
 
-		for (k = 0; k < playerNumber; k++)
-		{
-			playerLineStatus(k, &Game1);
 
-		}
+			playerLineStatus(playerNumber, &Game1);
 
 	
 		if (playerNumber == 2)
@@ -454,13 +450,7 @@ int randSeed;
 			printGameStatus(&Game1, k);
 		}
 
-
-		for (k = 0; k < playerNumber; k++)
-		{
-			playerLineStatus(k, &Game1);
-
-		}
-
+playerLineStatus(playerNumber, &Game1); 
 
 
 

@@ -15,11 +15,11 @@ int fail = 0; int original[5]; int returnRandom(int lower, int upper) {
 
 
 void playerLineStatus(int playerNumber, struct gameState *state) {
-	int i = 0; int player = 0;
+	int i = 0;// int player = 0;
 	for (i = 0; i < playerNumber; i++)
 	{
-		player = i + 1;
-		printf("Number of cards in player %d hand: %d, deck: %d, discard pile %d \n\n", player, state->handCount[i], state->deckCount[i],
+	//	player = i + 1;
+		printf("Number of cards in player %d hand: %d, deck: %d, discard pile %d \n\n", i, state->handCount[i], state->deckCount[i],
 			state->discardCount[i]);
 	}
 }
@@ -234,6 +234,11 @@ printf("player number right before game stauts %d\n", playerNumber);
 
 
 
+	
+		//	printf ("in here");
+playerLineStatus(playerNumber, &Game1); 
+
+
 //printGameStatus( &Game1, 1);
 		supplyAndCards(&Game1);
 
@@ -242,7 +247,11 @@ printf("player number right before game stauts %d\n", playerNumber);
 		printf("After Smithy card called \n");
 
 
- 	
+playerLineStatus(playerNumber, &Game1); 
+
+
+
+
 	for (k = 0; k < playerNumber; k++)
 		{
 			printf ("in here");
