@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "dominion.h"
 #include "dominion_helpers.h"
-
+#include <time.h>
 #include "rngs.h"
 
 /* Testing SeaHag*/
@@ -163,6 +163,9 @@ void chosenPlayerRandomize(int chosenPlayer, struct gameState *state)
 
 int main()
 {
+
+srand(time(0));
+
 	//printf(" Each other player discards the top card of their deck, then gains a curse into their deck."\n);
 	printf("SEAHAG CARD BEING TESTED \n\n");
 int randSeed; 

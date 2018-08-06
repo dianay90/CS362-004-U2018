@@ -3,7 +3,7 @@
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"
-
+#include <time.h>
 /* Testing Smithy */
 int NUMTRIES = 2;
 int prevHandCount, prevDeckCount, prevDiscardCount;
@@ -174,6 +174,8 @@ state->hand[chosenPlayer][2]= smithy;
 int main()
 {
 
+srand(time(0));
+
 	printf("SMITHY TEST\n\n");
 	//int gameStatus; 
 	/* GameState unit test */
@@ -221,7 +223,7 @@ int randSeed;
 		printf("\n");
 
 		/* print game status of random players */
-		printf("Chosen Player playing Smithy Card: %d \n", chosenPlayer);
+//		printf("Chosen Player playing Smithy Card: %d \n", chosenPlayer);
 
 
 //printf("player number right before game stauts %d\n", playerNumber);
