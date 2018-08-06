@@ -137,7 +137,7 @@ void chosenPlayerRandomize(int chosenPlayer, struct gameState *state) {
 
 		state->hand[chosenPlayer][i] = otherCards[rand() % 24];
 		
-printf("hand of chosen player %d, %d \n", chosenPlayer, state->hand[chosenPlayer][i]);	
+//printf("hand of chosen player %d, %d \n", chosenPlayer, state->hand[chosenPlayer][i]);	
 
 }
 

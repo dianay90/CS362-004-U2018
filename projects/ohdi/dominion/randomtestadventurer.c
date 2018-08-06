@@ -58,7 +58,7 @@ void chosenPlayerRandomize(int chosenPlayer, struct gameState *state)
 	int maxCoins = returnRandom(2, 5);
 
 //	int maxDeckCount = rand() % MAX_DECK;
-	int maxDeckCount = returnRandom(5,10);
+	int maxDeckCount = returnRandom(5,9);
 
 	state->deckCount[chosenPlayer] = maxDeckCount;
 
@@ -132,7 +132,6 @@ void printGameStatus(struct gameState *state, int chosenPlayer) {
 	printf("game status printing %d \n", chosenPlayer);
 	for (i = 0; i < state->deckCount[chosenPlayer]; i++)
 	{
-
 
 		printf("Player %d Deck: %d\n", chosenPlayer, state->deck[chosenPlayer][i]);
 	}
