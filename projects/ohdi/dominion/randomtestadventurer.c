@@ -251,7 +251,7 @@ int main()
 			printf("Deck does not have the right number of cards subtracted. \n");
 			fail = 1;
 		}
-		printf("Chosen Player playing Adventurer Card: %d \n", chosenPlayer);
+//		printf("Chosen Player playing Adventurer Card: %d \n", chosenPlayer);
 
 		printf("\n");
 
